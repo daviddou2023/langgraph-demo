@@ -8,6 +8,10 @@ from langchain.chat_models import init_chat_model
 from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
 
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 class State(TypedDict):
     messages: Annotated[list, add_messages]
@@ -15,10 +19,7 @@ class State(TypedDict):
 
 graph_builder = StateGraph(State)
 
-# 1. 配置 DeepSeek 的 API 密钥
-os.environ["DEEPSEEK_API_KEY"] = "sk-99fdb4c64f994c019c1e54581a620d0c" 
-# 配置工具密钥
-os.environ["TAVILY_API_KEY"] = "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"
+
 from langchain_tavily import TavilySearch
 
 tool = TavilySearch(max_results=2)
