@@ -1,0 +1,13 @@
+# 忽略环境变量文件（保护密钥）
+.env
+
+# 忽略你自定义的虚拟环境文件夹（重要）
+langgraph_demo/
+
+# 忽略常规 Python 缓存文件
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
